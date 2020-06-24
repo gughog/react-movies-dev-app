@@ -34,6 +34,12 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     font-family: 'Open Sans', sans-serif;
     background-color: ${({ bodyColor }) => bodyColor};
     color: ${({ fontColor }) => fontColor};
+
+    padding-top: 4rem;
+
+    @media only screen and (max-width: 526px) {
+      padding-top: 7rem;
+    }
   }
   ol, ul {
     list-style: none;
