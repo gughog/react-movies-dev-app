@@ -4,4 +4,5 @@ export const theme = {
   darkShallow: '#3a4750',
   emphasys: '#f6c90e',
   light: '#eeeeee',
+  transition: '0.3s',
 };
