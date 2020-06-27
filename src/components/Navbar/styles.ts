@@ -6,6 +6,7 @@ export const NavbarContainer = styled.div`
   left: 0;
   margin: auto;
   width: 100%;
+  z-index: 999;
 `;
 
 export const NavbarRow = styled.nav`
