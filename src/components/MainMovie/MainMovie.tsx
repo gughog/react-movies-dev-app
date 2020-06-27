@@ -15,8 +15,7 @@ import {
 
 
 export const MainMovie: React.FC = () => (
-  <MainMovieContainer>
-    {/* <MainMovieBackdrop /> */}
+  <MainMovieContainer backgroundImage="http://image.tmdb.org/t/p/original//zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg">
     <MainMoviePoster src="http://image.tmdb.org/t/p/w300/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg" />
     <MainMovieMeta>
       <MainMovieTopic> Trendings </MainMovieTopic>
@@ -35,18 +34,21 @@ export const MainMovie: React.FC = () => (
           bgColor={theme.darkShallow}
           fontColor="white"
           icon="slideshow"
+          responsive
         />
         <Button
           text="Add to Watch List"
           bgColor={theme.info}
           fontColor="white"
           icon="watch_later"
+          responsive
         />
         <Button
           text="Add to Favorites"
           bgColor={theme.danger}
           fontColor="white"
           icon="favorite_border"
+          responsive
         />
       </MainMovieActionsContainer>
     </MainMovieMeta>
