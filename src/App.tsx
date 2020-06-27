@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'themes';
 
 import { Navbar } from 'components';
-import { GlobalStyle } from 'components/styles';
+import { GlobalStyle } from 'components/global-styles';
 
 const App = () => (
   <ThemeProvider theme={theme}>

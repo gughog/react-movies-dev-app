@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-  /* Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
   /* CSS Reset */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -35,10 +33,11 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     background-color: ${({ bodyColor }) => bodyColor};
     color: ${({ fontColor }) => fontColor};
 
-    padding-top: 4rem;
+    padding: 5rem 1rem 1rem 1rem;
+
 
     @media only screen and (max-width: 526px) {
-      padding-top: 7rem;
+      padding-top: 8rem;
     }
   }
   ol, ul {
@@ -55,5 +54,8 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  * {
+    box-sizing: border-box;
   }
 `;
