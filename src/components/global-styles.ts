@@ -1,8 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-  /* Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
   /* CSS Reset */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -34,6 +32,13 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     font-family: 'Open Sans', sans-serif;
     background-color: ${({ bodyColor }) => bodyColor};
     color: ${({ fontColor }) => fontColor};
+
+    padding: 5rem 1rem 1rem 1rem;
+
+
+    @media only screen and (max-width: 526px) {
+      padding-top: 8rem;
+    }
   }
   ol, ul {
     list-style: none;
@@ -50,4 +55,13 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  * {
+    box-sizing: border-box;
+  }
+`;
+
+export const GridFrame = styled.section`
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+  grid-gap: 1.5rem;
 `;
