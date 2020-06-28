@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MainMovie, CategoriesGrid, MovieCard } from 'components';
-import { CategoriesGridTitle } from 'components/CategoriesGrid/styles';
+import { MainMovie, GridWithTitle, MovieCard } from 'components';
+import { GridWithTitleTitle } from 'components/GridWithTitle/styles';
 import { GridFrame } from 'components/global-styles';
 
 import Api from 'services/Api.service';
@@ -82,7 +82,7 @@ export const HomePage = () => {
             />
           )
       }
-      <CategoriesGridTitle> More on Popular </CategoriesGridTitle>
+      <GridWithTitleTitle> More on Popular </GridWithTitleTitle>
       <GridFrame center>
         {
           movies && movies.map(({
@@ -99,7 +99,7 @@ export const HomePage = () => {
           ))
         }
       </GridFrame>
-      <CategoriesGrid title="Browser by Categories" data={categories} />
+      <GridWithTitle title="Browser by Categories" data={categories} />
     </div>
   );
 };

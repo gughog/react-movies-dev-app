@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { CategoryCard } from 'components';
 import { GridFrame } from 'components/global-styles';
-import { CategoriesGridTitle } from './styles';
+import { GridWithTitleTitle } from './styles';
 
-export const CategoriesGrid: React.FC<CategoriesGridProps> = ({ title, data }) => (
+export const GridWithTitle: React.FC<GridWithTitleProps> = ({ title, data }) => (
   <>
-    <CategoriesGridTitle>{title}</CategoriesGridTitle>
+    <GridWithTitleTitle>{title}</GridWithTitleTitle>
     <GridFrame>
       {
         data.map((category: CategoryCardprops) => (
