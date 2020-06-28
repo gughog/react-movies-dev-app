@@ -42,6 +42,7 @@ export const NavbarList = styled.ul`
   @media only screen and (max-width: 625px) {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    font-size: 0.8rem;
   }
 `;
 

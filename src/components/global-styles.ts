@@ -60,8 +60,9 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   }
 `;
 
-export const GridFrame = styled.section`
+export const GridFrame = styled.section<GridFrameProps>`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1.5rem;
+  ${({ center }) => center && 'justify-items: center;'}
 `;

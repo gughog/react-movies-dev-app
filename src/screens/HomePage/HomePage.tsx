@@ -34,7 +34,7 @@ export const HomePage = () => {
     },
   ];
 
-  const [loading, setLoading] = React.useState(false); 
+  const [loading, setLoading] = React.useState(false);
   const [movies, setMovies] = React.useState<MovieProps[]>();
   const [mainMovie, setmainMovie] = React.useState<MovieProps>({
     popularity: 0,
@@ -55,7 +55,7 @@ export const HomePage = () => {
 
   React.useEffect(() => {
     setLoading(true);
-    Api.get(`popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
+    Api.get(`movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
       .then((response) => response.data.results)
       .then((result) => {
         setMovies(result);
@@ -83,7 +83,7 @@ export const HomePage = () => {
           )
       }
       <CategoriesGridTitle> More on Popular </CategoriesGridTitle>
-      <GridFrame>
+      <GridFrame center>
         {
           movies && movies.map(({
             id, backdrop_path, original_title, release_date, overview,

@@ -27,6 +27,7 @@ interface ButtonProps {
   fontColor?: string;
   icon?: string;
   responsive?: boolean;
+  onClick?: () => void;
 }
 
 interface ButtonStyles {
@@ -49,4 +50,23 @@ interface CategoryCardprops {
 interface CategoryCardStyles {
   bgColor: string;
   fontColor: string;
+}
+
+interface NoDataProps {
+  title: string;
+  icon: string;
+}
+
+interface SearchInputProps {
+  searchHandler: (query: string) => Promise<void>;
+  placeholder?: string;
+}
+
+interface GridFrameProps {
+  center?: boolean;
+}
+
+interface SweetAlertProps {
+  title: string;
+  text: string;
 }
