@@ -11,6 +11,7 @@ export const GridWithTitle: React.FC<GridWithTitleProps> = ({ title, data }) => 
       {
         data.map((category: CategoryCardprops) => (
           <CategoryCard
+            key={category.title}
             title={category.title}
             bgColor={category.bgColor}
             fontColor={category.fontColor}

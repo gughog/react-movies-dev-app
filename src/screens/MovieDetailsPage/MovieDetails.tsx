@@ -65,6 +65,7 @@ export const MovieDetailsPage: React.FC = () => {
           : (
             <>
               <MainMovieContainer
+                key={id}
                 backgroundImage={`${process.env.REACT_APP_IMAGE_BASE_URL}original${movieDetails.backdrop_path}`}
               >
                 <MainMoviePoster
@@ -121,16 +122,15 @@ export const MovieDetailsPage: React.FC = () => {
               <GridWithTitleTitle> Trailers and Videos </GridWithTitleTitle>
               <GridFrame center>
                 {
-              movieDetails.videos.results.map(({ key, name }) => (
-                <MovieVideo
-                  key={key}
-                  title={name}
-                  src={`https://www.youtube.com/embed/${key}`}
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ))
-            }
+                  movieDetails.videos.results.map(({ key, name }) => (
+                    <MovieVideo
+                      key={key}
+                      title={name}
+                      src={`https://www.youtube.com/embed/${key}`}
+                      allowFullScreen
+                    />
+                  ))
+                }
               </GridFrame>
             </>
           )

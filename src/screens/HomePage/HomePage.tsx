@@ -86,13 +86,13 @@ export const HomePage = () => {
       <GridFrame center>
         {
           movies && movies.map(({
-            id, backdrop_path, original_title, release_date, overview,
+            id, backdrop_path, title, release_date, overview,
           }) => (
             <MovieCard
               key={id}
               id={id}
               image={backdrop_path}
-              title={original_title}
+              title={title}
               releaseDate={release_date}
               description={overview}
             />
