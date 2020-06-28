@@ -18,6 +18,7 @@ export const MovieCardBody = styled.div`
   padding: 1rem;
   position: absolute;
   display: none;
+  width: 300px;
 `;
 
 export const MovieCardImage = styled.img`

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import noPicture from 'assets/no_picture.png';
 import { theme } from 'themes';
 import { Button } from 'components';
 import {
@@ -11,6 +12,7 @@ import {
   MovieCardActions,
 } from './styles';
 
+
 export const MovieCard: React.FC<MovieCardProps> = ({
   id,
   description,
@@ -19,7 +21,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   title,
 }) => (
   <MovieCardContainer key={id}>
-    <MovieCardImage src={`${process.env.REACT_APP_IMAGE_BASE_URL}original${image}`} />
+    <MovieCardImage src={image ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${image}` : noPicture} />
     <MovieCardBody>
       <MovieCardTitle>{title}</MovieCardTitle>
       <MovieCardReleaseDate>{releaseDate.slice(0, 4)}</MovieCardReleaseDate>
