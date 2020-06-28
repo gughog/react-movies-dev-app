@@ -32,5 +32,7 @@ export const ButtonBody = styled.button<ButtonStyles>`
     text-align: center;
     margin-right: 0;
     margin-top: 1rem;
+
+    margin: 1rem 0.5rem 0 0.5rem 
   }
 `;
