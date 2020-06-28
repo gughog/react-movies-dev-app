@@ -7,3 +7,4 @@ export * from './CategoryCard/CategoryCard';
 export * from './Footer/Footer';
 export * from './SearchInput/SearchInput';
 export * from './NoData/NoData';
+export * from './SweetAlert/index';

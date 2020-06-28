@@ -3,17 +3,31 @@ import Api from 'services/Api.service';
 import cinema from 'assets/cinema.svg';
 import { GridFrame } from 'components/global-styles';
 import { MovieCard, SearchInput, NoData } from 'components';
+import { ErrorAlert } from 'components/SweetAlert';
 import { SearchPageTitle, SearchPageResultsText } from './styles';
+
 
 export const SearchPage: React.FC = () => {
   const [searchMovies, setSearchMovies] = React.useState<SearchMoviesProps>();
 
   const fetchMoviesByQuery = async (query: string) => {
     try {
+      if (!query) {
+        ErrorAlert({
+          title: 'Empty search field!',
+          text: 'Type something and then hit search to get your movies',
+        });
+        return undefined;
+      }
       const response = await Api.get(`search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`);
       setSearchMovies(response.data);
+      return undefined;
     } catch (error) {
-      console.log(error);
+      ErrorAlert({
+        title: 'Some error has occured',
+        text: 'Please, try again later.',
+      });
+      return undefined;
     }
   };
 

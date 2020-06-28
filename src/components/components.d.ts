@@ -65,3 +65,8 @@ interface SearchInputProps {
 interface GridFrameProps {
   center?: boolean;
 }
+
+interface SweetAlertProps {
+  title: string;
+  text: string;
+}
