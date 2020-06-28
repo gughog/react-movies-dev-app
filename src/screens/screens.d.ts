@@ -14,3 +14,10 @@ interface MovieProps {
   overview: string;
   release_date: string;
 }
+
+interface SearchMoviesProps {
+  page: number;
+  total_results: number;
+  total_pages: number;
+  results: MovieProps[];
+}

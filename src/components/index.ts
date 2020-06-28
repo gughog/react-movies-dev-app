@@ -6,3 +6,4 @@ export * from './MovieCard/MovieCard';
 export * from './CategoryCard/CategoryCard';
 export * from './Footer/Footer';
 export * from './SearchInput/SearchInput';
+export * from './NoData/NoData';
