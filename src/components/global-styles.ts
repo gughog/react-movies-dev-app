@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     padding: 5rem 1rem 1rem 1rem;
 
 
-    @media only screen and (max-width: 526px) {
+    @media only screen and (max-width: 625px) {
       padding-top: 8rem;
     }
   }

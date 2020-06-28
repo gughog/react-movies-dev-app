@@ -25,6 +25,9 @@ export const Navbar: React.FC<NavbarProps> = ({ title }) => (
       </MainNavLink>
       <NavbarList>
         <NavbarItem>
+          <CustomNavLink to="/search">Search</CustomNavLink>
+        </NavbarItem>
+        <NavbarItem>
           <CustomNavLink to="/watchlist">Watch Later</CustomNavLink>
         </NavbarItem>
         <NavbarItem>

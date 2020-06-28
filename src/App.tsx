@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'themes';
 import { Navbar, Footer } from 'components';
-import { HomePage, MovieList } from 'screens';
+import { HomePage, SearchPage } from 'screens';
 import { GlobalStyle } from 'components/global-styles';
 
 import {
@@ -21,13 +21,13 @@ const App = () => (
           <HomePage />
         </Route>
         <Route path="/search">
-          <MovieList pageTitle="Searching" />
+          <SearchPage />
         </Route>
         <Route path="/favorites">
-          <MovieList pageTitle="My Favorites" />
+          Favorites
         </Route>
         <Route path="/watchlist">
-          <MovieList pageTitle="My Watch List" />
+          Watch List
         </Route>
       </Switch>
       <Footer />

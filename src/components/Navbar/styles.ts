@@ -32,14 +32,14 @@ export const NavbarRow = styled.nav`
 
   background-color: ${({ theme }) => theme.darkDeep};
 
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     flex-direction: column;
   }
 `;
 
 export const NavbarList = styled.ul`
   display: flex;
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -75,7 +75,7 @@ export const NavbarItem = styled.li`
     }
 
   }
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     margin-left: 0;
   }
 `;

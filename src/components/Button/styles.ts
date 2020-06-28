@@ -6,6 +6,7 @@ export const ButtonBody = styled.button<ButtonStyles>`
   padding: 0;
   background-color: aquamarine;
   display: flex;
+  justify-content: center;
   align-items: center;
   transition: transform 0.3s;
   cursor: pointer;
