@@ -16,7 +16,15 @@ export const ButtonBody = styled.button<ButtonStyles>`
   * { padding: 0.5rem; }
 
   &:hover { transform: scale(1.05); }
-  &:active { transform: scale(1); }
+  &:active {
+    transform: scale(1);
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
 
   @media only screen and (max-width: 800px) {
     flex-direction: row;
