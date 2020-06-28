@@ -40,7 +40,7 @@ export const MainMovie: React.FC = () => (
           text="Add to Watch List"
           bgColor={theme.info}
           fontColor="white"
-          icon="watch_later"
+          icon="playlist_add"
           responsive
         />
         <Button
