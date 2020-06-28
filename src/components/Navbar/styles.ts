@@ -1,4 +1,18 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+export const MainNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.light};
+`;
+
+export const CustomNavLink = styled(MainNavLink)`
+  &.active {
+    border-bottom: 0.2rem solid ${({ theme }) => theme.emphasys};
+    background: rgb(246,201,14);
+    background: linear-gradient(0deg, rgba(246,201,14,0.24831931063441004) 0%, rgba(80,140,164,0) 100%);
+  }
+`;
 
 export const NavbarContainer = styled.div`
   position: fixed;
@@ -18,14 +32,14 @@ export const NavbarRow = styled.nav`
 
   background-color: ${({ theme }) => theme.darkDeep};
 
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     flex-direction: column;
   }
 `;
 
 export const NavbarList = styled.ul`
   display: flex;
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -61,7 +75,7 @@ export const NavbarItem = styled.li`
     }
 
   }
-  @media only screen and (max-width: 526px) {
+  @media only screen and (max-width: 625px) {
     margin-left: 0;
   }
 `;

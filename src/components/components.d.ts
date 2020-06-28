@@ -11,6 +11,15 @@ interface MainMovieContainerProps {
   backgroundImage: string;
 }
 
+interface MovieCardProps {
+  id: number;
+  image: string;
+  backdropImage?: string;
+  title: string;
+  releaseDate: string;
+  votes?: number;
+  description: string;
+}
 
 interface ButtonProps {
   text?: string;

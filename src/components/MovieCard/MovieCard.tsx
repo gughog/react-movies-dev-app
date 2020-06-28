@@ -11,16 +11,20 @@ import {
   MovieCardActions,
 } from './styles';
 
-export const MovieCard = () => (
-  <MovieCardContainer>
-    <MovieCardImage src="http://image.tmdb.org/t/p/original//zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg" />
+export const MovieCard: React.FC<MovieCardProps> = ({
+  id,
+  description,
+  image,
+  releaseDate,
+  title,
+}) => (
+  <MovieCardContainer key={id}>
+    <MovieCardImage src={`${process.env.REACT_APP_IMAGE_BASE_URL}original${image}`} />
     <MovieCardBody>
-      <MovieCardTitle>Star Wars</MovieCardTitle>
-      <MovieCardReleaseDate> 1977 </MovieCardReleaseDate>
+      <MovieCardTitle>{title}</MovieCardTitle>
+      <MovieCardReleaseDate>{releaseDate.slice(0, 4)}</MovieCardReleaseDate>
       <MovieCardDescription>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Vero quidem provident beatae dolores? Amet libero sed accusamus
-        saepe alias eos.
+        {description}
       </MovieCardDescription>
       <MovieCardActions>
         <Button

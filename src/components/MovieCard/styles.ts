@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const MovieCardContainer = styled.div`
-  min-width: 300px;
-  transition: display 0.5s, transform 0.5s;
+  width: 300px;
+  transition: display 0.3s, transform 0.3s;
 
   &:hover {
     position: relative;
     transform: scale(1.05);
     div {
       display: block;
-      z-index: 998;
     }
   }
 `;
@@ -22,7 +21,7 @@ export const MovieCardBody = styled.div`
 `;
 
 export const MovieCardImage = styled.img`
-  max-width: 300px;
+  width: 300px;
 `;
 
 export const MovieCardTitle = styled.h3`

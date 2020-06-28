@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     padding: 5rem 1rem 1rem 1rem;
 
 
-    @media only screen and (max-width: 526px) {
+    @media only screen and (max-width: 625px) {
       padding-top: 8rem;
     }
   }
@@ -62,6 +62,6 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
 
 export const GridFrame = styled.section`
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1.5rem;
 `;

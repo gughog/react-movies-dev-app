@@ -8,23 +8,30 @@ import {
   NavbarTitle,
   NavbarLogo,
   NavbarItem,
+  MainNavLink,
+  CustomNavLink,
 } from './styles';
 
 export const Navbar: React.FC<NavbarProps> = ({ title }) => (
   <NavbarContainer>
     <NavbarRow>
-      <NavbarTitleContainer>
-        <NavbarLogo src={logo} alt="Movie icon" />
-        <NavbarTitle>
-          {title}
-        </NavbarTitle>
-      </NavbarTitleContainer>
+      <MainNavLink to="/">
+        <NavbarTitleContainer>
+          <NavbarLogo src={logo} alt="Movie icon" />
+          <NavbarTitle>
+            {title}
+          </NavbarTitle>
+        </NavbarTitleContainer>
+      </MainNavLink>
       <NavbarList>
         <NavbarItem>
-          <a href="#/">Watch Later</a>
+          <CustomNavLink to="/search">Search</CustomNavLink>
         </NavbarItem>
         <NavbarItem>
-          <a href="#/">Favorites</a>
+          <CustomNavLink to="/watchlist">Watch Later</CustomNavLink>
+        </NavbarItem>
+        <NavbarItem>
+          <CustomNavLink to="/favorites">Favorites</CustomNavLink>
         </NavbarItem>
       </NavbarList>
     </NavbarRow>
