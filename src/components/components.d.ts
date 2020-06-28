@@ -25,3 +25,19 @@ interface ButtonStyles {
   fontColor?: string;
   isResponsive?: boolean;
 }
+
+interface CategoriesGridProps {
+  title: string;
+  data: CategoryCardprops[];
+}
+
+interface CategoryCardprops {
+  title: string;
+  bgColor: string;
+  fontColor: string;
+}
+
+interface CategoryCardStyles {
+  bgColor: string;
+  fontColor: string;
+}
