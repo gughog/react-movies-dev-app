@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { ButtonBaseLayout } from 'components/Button/styles';
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   /* CSS Reset */
@@ -65,4 +66,12 @@ export const GridFrame = styled.section<GridFrameProps>`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1.5rem;
   ${({ center }) => center && 'justify-items: center;'}
+`;
+
+export const LinkButton = styled.a<LinkButtonProps>`
+  ${ButtonBaseLayout}
+  text-decoration: none;
+  padding: 0 1rem;
+  background-color: ${({ bgColor }) => bgColor};
+  color: ${({ fontColor }) => fontColor};;
 `;
