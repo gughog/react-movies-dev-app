@@ -14,26 +14,40 @@ import {
 } from './styles';
 
 
-export const MainMovie: React.FC = () => (
-  <MainMovieContainer backgroundImage="http://image.tmdb.org/t/p/original//zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg">
-    <MainMoviePoster src="http://image.tmdb.org/t/p/w300/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg" />
+export const MainMovie: React.FC<MovieCardProps> = ({
+  id,
+  description,
+  image,
+  backdropImage,
+  releaseDate,
+  votes,
+  title,
+}) => (
+  <MainMovieContainer backgroundImage={`${process.env.REACT_APP_IMAGE_BASE_URL}original${backdropImage}`}>
+    <MainMoviePoster src={`${process.env.REACT_APP_IMAGE_BASE_URL}w300${image}`} />
     <MainMovieMeta>
-      <MainMovieTopic> Trendings </MainMovieTopic>
-      <MainMovieTitle> Star Wars </MainMovieTitle>
-      <MainMovieVoteAverage> 8.2/10 </MainMovieVoteAverage>
-      <MainMovieReleaseDate> Release: 25/05/1977 </MainMovieReleaseDate>
+      <MainMovieTopic> Popular </MainMovieTopic>
+      <MainMovieTitle>
+        {title}
+      </MainMovieTitle>
+      <MainMovieVoteAverage>
+        {votes}
+        /10
+      </MainMovieVoteAverage>
+      <MainMovieReleaseDate>
+        Release:
+        {' '}
+        {releaseDate.slice(0, 4)}
+      </MainMovieReleaseDate>
       <MainMovieDescription>
-        Princess Leia is captured and held hostage by the evil Imperial forces in their effort
-        to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han
-        Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful
-        princess and restore peace and justice in the Empire.
+        {description}
       </MainMovieDescription>
       <MainMovieActionsContainer>
         <Button
-          text="Watch trailer"
+          text="See Details"
           bgColor={theme.darkShallow}
           fontColor="white"
-          icon="slideshow"
+          icon="launch"
           responsive
         />
         <Button
