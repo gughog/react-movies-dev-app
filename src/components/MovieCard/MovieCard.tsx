@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { setFavorite, removeFromFavorites } from 'services/Storage.service';
+import {
+  setFavorite,
+  removeFromFavorites,
+  setToWatchList,
+  removeFromWatchList,
+} from 'services/Storage.service';
 import { useHistory } from 'react-router-dom';
 import noPicture from 'assets/no_picture.png';
 import { theme } from 'themes';
@@ -21,8 +26,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   release_date,
   title,
   isFavorite = false,
-  isOnWatchlist,
+  isOnWatchList = false,
   fetchFavorites,
+  fetchWatchList,
 }) => {
   const history = useHistory();
 
@@ -47,6 +53,27 @@ export const MovieCard: React.FC<MovieCardProps> = ({
     return true;
   };
 
+  const handleWatchListClick = (inWatchList: boolean, movieId: number) => {
+    if (inWatchList) {
+      removeFromWatchList(movieId);
+      if (fetchWatchList) {
+        fetchWatchList();
+      }
+      return true;
+    }
+    setToWatchList({
+      id,
+      overview,
+      backdrop_path,
+      release_date,
+      title,
+    });
+    if (fetchWatchList) {
+      fetchWatchList();
+    }
+    return true;
+  };
+
   return (
     <MovieCardContainer key={id}>
       <MovieCardImage src={backdrop_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}` : noPicture} />
@@ -56,7 +83,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({
         </MovieCardTitle>
         <MovieCardReleaseDate>{release_date.slice(0, 4)}</MovieCardReleaseDate>
         <MovieCardDescription>
-          {overview}
+          {
+            overview.replace(/^(.{121}).{2,}/, '$1...')
+          }
         </MovieCardDescription>
         <MovieCardActions>
           <Button
@@ -66,9 +95,10 @@ export const MovieCard: React.FC<MovieCardProps> = ({
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
-            icon={isOnWatchlist ? 'playlist_add_check' : 'playlist_add'}
+            icon={isOnWatchList ? 'playlist_add_check' : 'playlist_add'}
             bgColor={theme.info}
             fontColor={theme.light}
+            onClick={() => handleWatchListClick(isOnWatchList, id)}
           />
           <Button
             icon={isFavorite ? 'favorite' : 'favorite_border'}
