@@ -20,8 +20,9 @@ interface MovieCardProps {
   vote_average?: number;
   overview: string;
   isFavorite?: boolean;
-  isOnWatchlist?: boolean;
+  isOnWatchList?: boolean;
   fetchFavorites?: () => void;
+  fetchWatchList?: () => void;
 }
 
 interface ButtonProps {

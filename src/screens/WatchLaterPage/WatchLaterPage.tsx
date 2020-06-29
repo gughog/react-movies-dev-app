@@ -1,47 +1,47 @@
 import * as React from 'react';
-import { getFavorites } from 'services/Storage.service';
+import { getWatchList } from 'services/Storage.service';
 import cinema from 'assets/cinema.svg';
 import { GridFrame } from 'components/global-styles';
 import { MovieCard, NoData } from 'components';
 
 import {
-  SearchPageTitle as FavoritesPageTitle,
-  SearchPageResultsText as FavoritesPageResultsText,
+  SearchPageTitle as WatchLaterPageTitle,
+  SearchPageResultsText as WatchLaterPageResultsText,
 } from 'screens/SearchPage/styles';
 
 
-export const FavoritesPage: React.FC = () => {
-  const [favoriteMovies, setFavoriteMovies] = React.useState<MovieCardProps[]>();
+export const WatchLaterPage: React.FC = () => {
+  const [watchListMovies, setWatchListMovies] = React.useState<MovieCardProps[]>();
 
   React.useEffect(() => {
-    const data = getFavorites();
+    const data = getWatchList();
     if (data) {
-      setFavoriteMovies(data);
+      setWatchListMovies(data);
     }
   }, []);
 
-  const fetchFavorites = () => {
-    const data = getFavorites();
+  const fetchWatchList = () => {
+    const data = getWatchList();
     if (data) {
-      setFavoriteMovies(data);
+      setWatchListMovies(data);
     }
   };
 
   return (
     <>
-      <FavoritesPageTitle>
-        My Favorite Movies
-      </FavoritesPageTitle>
+      <WatchLaterPageTitle>
+        My Watch List
+      </WatchLaterPageTitle>
       {
-        favoriteMovies && favoriteMovies.length > 0
+        watchListMovies && watchListMovies.length > 0
           ? (
             <>
-              <FavoritesPageResultsText>
-                {`Showing results (${favoriteMovies.length}):`}
-              </FavoritesPageResultsText>
+              <WatchLaterPageResultsText>
+                {`Showing results (${watchListMovies.length}):`}
+              </WatchLaterPageResultsText>
               <GridFrame center>
                 {
-                  favoriteMovies && favoriteMovies.map(({
+                  watchListMovies && watchListMovies.map(({
                     id,
                     backdrop_path,
                     title,
@@ -59,14 +59,14 @@ export const FavoritesPage: React.FC = () => {
                       overview={overview}
                       isFavorite={isFavorite}
                       isOnWatchList={isOnWatchList}
-                      fetchFavorites={fetchFavorites}
+                      fetchWatchList={fetchWatchList}
                     />
                   ))
                 }
               </GridFrame>
             </>
           )
-          : <NoData title="You favorite movies will appear here!" icon={cinema} />
+          : <NoData title="You movies saved will appear here!" icon={cinema} />
       }
     </>
   );

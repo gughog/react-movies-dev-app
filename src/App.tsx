@@ -8,6 +8,7 @@ import {
   SearchPage,
   MovieDetailsPage,
   FavoritesPage,
+  WatchLaterPage,
 } from 'screens';
 
 import {
@@ -32,7 +33,7 @@ const App = () => (
           <FavoritesPage />
         </Route>
         <Route path="/watchlist">
-          Watch List
+          <WatchLaterPage />
         </Route>
         <Route path="/movie/:id">
           <MovieDetailsPage />
