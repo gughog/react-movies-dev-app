@@ -48,7 +48,7 @@ export const FavoritesPage: React.FC = () => {
                     release_date,
                     overview,
                     isFavorite,
-                    isOnWatchlist,
+                    isOnWatchList,
                   }) => (
                     <MovieCard
                       key={id}
@@ -58,7 +58,7 @@ export const FavoritesPage: React.FC = () => {
                       release_date={release_date}
                       overview={overview}
                       isFavorite={isFavorite}
-                      isOnWatchlist={isOnWatchlist}
+                      isOnWatchList={isOnWatchList}
                       fetchFavorites={fetchFavorites}
                     />
                   ))

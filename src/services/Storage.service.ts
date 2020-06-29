@@ -67,14 +67,14 @@ export const setToWatchList = (movie: MovieCardProps) => {
       return false;
     }
 
-    const newData = [...parsedData, { ...movie, isFavorite: true }];
+    const newData = [...parsedData, { ...movie, isOnWatchList: true }];
     localStorage.setItem(WATCHLIST_STORAGE, JSON.stringify(newData));
 
     SuccessToast({ title: 'The movie was added to your watch list!' });
     return true;
   }
 
-  localStorage.setItem(WATCHLIST_STORAGE, JSON.stringify([{ ...movie, isFavorite: true }]));
+  localStorage.setItem(WATCHLIST_STORAGE, JSON.stringify([{ ...movie, isOnWatchList: true }]));
   SuccessToast({ title: 'The movie was added to your watch list!' });
   return true;
 };

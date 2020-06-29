@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'components';
 import { theme } from 'themes';
-import { setFavorite } from 'services/Storage.service';
+import { setFavorite, setToWatchList } from 'services/Storage.service';
 import {
   MainMovieContainer,
   MainMoviePoster,
@@ -61,6 +61,14 @@ export const MainMovie: React.FC<MovieCardProps> = ({
             fontColor="white"
             icon="playlist_add"
             responsive
+            onClick={() => setToWatchList({
+              id,
+              poster_path,
+              backdrop_path,
+              title,
+              release_date,
+              overview,
+            })}
           />
           <Button
             text="Add to Favorites"
