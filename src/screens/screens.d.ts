@@ -21,3 +21,29 @@ interface SearchMoviesProps {
   total_pages: number;
   results: MovieProps[];
 }
+
+interface MovieDetails extends MovieProps {
+  imdb_id: string;
+  tagline: string;
+  videos: {
+    results: MovieVideoProps[]
+  }
+  homepage: string;
+  genres: MovieGenre[];
+}
+
+interface MovieVideoProps {
+  id: string,
+  iso_639_1: string,
+  iso_3166_1: string,
+  key: string,
+  name: string,
+  site: string,
+  size: number,
+  type: string
+}
+
+interface MovieGenre {
+  id: number;
+  name: string;
+}

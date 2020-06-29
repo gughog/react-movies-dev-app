@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MainMovie, CategoriesGrid, MovieCard } from 'components';
-import { CategoriesGridTitle } from 'components/CategoriesGrid/styles';
+import { MainMovie, GridWithTitle, MovieCard } from 'components';
+import { GridWithTitleTitle } from 'components/GridWithTitle/styles';
 import { GridFrame } from 'components/global-styles';
 
 import Api from 'services/Api.service';
@@ -82,24 +82,24 @@ export const HomePage = () => {
             />
           )
       }
-      <CategoriesGridTitle> More on Popular </CategoriesGridTitle>
+      <GridWithTitleTitle> More on Popular </GridWithTitleTitle>
       <GridFrame center>
         {
           movies && movies.map(({
-            id, backdrop_path, original_title, release_date, overview,
+            id, backdrop_path, title, release_date, overview,
           }) => (
             <MovieCard
               key={id}
               id={id}
               image={backdrop_path}
-              title={original_title}
+              title={title}
               releaseDate={release_date}
               description={overview}
             />
           ))
         }
       </GridFrame>
-      <CategoriesGrid title="Browser by Categories" data={categories} />
+      <GridWithTitle title="Browser by Categories" data={categories} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ButtonBody = styled.button<ButtonStyles>`
+export const ButtonBaseLayout = css<ButtonStyles>`
   margin-right: 1rem;
   border: none;
   padding: 0;
@@ -36,4 +36,8 @@ export const ButtonBody = styled.button<ButtonStyles>`
 
     margin: 1rem 0.5rem 0 0.5rem 
   }
+`;
+
+export const ButtonBody = styled.button<ButtonStyles>`
+  ${ButtonBaseLayout}
 `;

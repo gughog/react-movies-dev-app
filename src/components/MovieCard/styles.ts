@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const MovieCardContainer = styled.div`
   width: 300px;
@@ -25,14 +26,15 @@ export const MovieCardImage = styled.img`
   width: 300px;
 `;
 
-export const MovieCardTitle = styled.h3`
+export const MovieCardTitle = styled(Link)`
   font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: ${({ theme }) => theme.light};
 `;
 
 export const MovieCardReleaseDate = styled.p`
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
 `;
 
 export const MovieCardDescription = styled.p`

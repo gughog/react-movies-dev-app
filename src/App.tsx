@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'themes';
 import { Navbar, Footer } from 'components';
-import { HomePage, SearchPage } from 'screens';
+import { HomePage, SearchPage, MovieDetailsPage } from 'screens';
 import { GlobalStyle } from 'components/global-styles';
 
 import {
@@ -28,6 +28,9 @@ const App = () => (
         </Route>
         <Route path="/watchlist">
           Watch List
+        </Route>
+        <Route path="/movie/:id">
+          <MovieDetailsPage />
         </Route>
       </Switch>
       <Footer />
