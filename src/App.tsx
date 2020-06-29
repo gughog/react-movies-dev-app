@@ -2,8 +2,13 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'themes';
 import { Navbar, Footer } from 'components';
-import { HomePage, SearchPage, MovieDetailsPage } from 'screens';
 import { GlobalStyle } from 'components/global-styles';
+import {
+  HomePage,
+  SearchPage,
+  MovieDetailsPage,
+  FavoritesPage,
+} from 'screens';
 
 import {
   BrowserRouter as Router,
@@ -24,7 +29,7 @@ const App = () => (
           <SearchPage />
         </Route>
         <Route path="/favorites">
-          Favorites
+          <FavoritesPage />
         </Route>
         <Route path="/watchlist">
           Watch List

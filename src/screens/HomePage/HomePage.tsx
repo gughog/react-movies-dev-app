@@ -74,11 +74,11 @@ export const HomePage = () => {
             <MainMovie
               id={mainMovie.id}
               title={mainMovie.title}
-              backdropImage={mainMovie.backdrop_path}
-              image={mainMovie.poster_path}
-              description={mainMovie.overview}
-              releaseDate={mainMovie.release_date}
-              votes={mainMovie.vote_average}
+              backdrop_path={mainMovie.backdrop_path}
+              poster_path={mainMovie.poster_path}
+              overview={mainMovie.overview}
+              release_date={mainMovie.release_date}
+              vote_average={mainMovie.vote_average}
             />
           )
       }
@@ -91,10 +91,10 @@ export const HomePage = () => {
             <MovieCard
               key={id}
               id={id}
-              image={backdrop_path}
+              backdrop_path={backdrop_path}
               title={title}
-              releaseDate={release_date}
-              description={overview}
+              release_date={release_date}
+              overview={overview}
             />
           ))
         }

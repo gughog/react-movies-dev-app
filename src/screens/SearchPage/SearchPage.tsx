@@ -60,17 +60,17 @@ export const SearchPage: React.FC = () => {
                   searchMovies && searchMovies.results.map(({
                     id,
                     backdrop_path,
-                    original_title,
+                    title,
                     release_date,
                     overview,
                   }) => (
                     <MovieCard
                       key={id}
                       id={id}
-                      image={backdrop_path}
-                      title={original_title}
-                      releaseDate={release_date}
-                      description={overview}
+                      backdrop_path={backdrop_path}
+                      title={title}
+                      release_date={release_date}
+                      overview={overview}
                     />
                   ))
                 }

@@ -71,7 +71,7 @@ export const GridFrame = styled.section<GridFrameProps>`
 export const LinkButton = styled.a<LinkButtonProps>`
   ${ButtonBaseLayout}
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0.75rem 1rem;
   background-color: ${({ bgColor }) => bgColor};
   color: ${({ fontColor }) => fontColor};;
 `;

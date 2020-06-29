@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { setFavorite, removeFromFavorites } from 'services/Storage.service';
 import { useHistory } from 'react-router-dom';
 import noPicture from 'assets/no_picture.png';
 import { theme } from 'themes';
@@ -15,22 +16,47 @@ import {
 
 export const MovieCard: React.FC<MovieCardProps> = ({
   id,
-  description,
-  image,
-  releaseDate,
+  overview,
+  backdrop_path,
+  release_date,
   title,
+  isFavorite = false,
+  isOnWatchlist,
+  fetchFavorites,
 }) => {
   const history = useHistory();
+
+  const handleFavoriteClick = (favorited: boolean, movieId: number) => {
+    if (favorited) {
+      removeFromFavorites(movieId);
+      if (fetchFavorites) {
+        fetchFavorites();
+      }
+      return true;
+    }
+    setFavorite({
+      id,
+      overview,
+      backdrop_path,
+      release_date,
+      title,
+    });
+    if (fetchFavorites) {
+      fetchFavorites();
+    }
+    return true;
+  };
+
   return (
     <MovieCardContainer key={id}>
-      <MovieCardImage src={image ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${image}` : noPicture} />
+      <MovieCardImage src={backdrop_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}` : noPicture} />
       <MovieCardBody>
         <MovieCardTitle to={`/movie/${id}`}>
           {title}
         </MovieCardTitle>
-        <MovieCardReleaseDate>{releaseDate.slice(0, 4)}</MovieCardReleaseDate>
+        <MovieCardReleaseDate>{release_date.slice(0, 4)}</MovieCardReleaseDate>
         <MovieCardDescription>
-          {description}
+          {overview}
         </MovieCardDescription>
         <MovieCardActions>
           <Button
@@ -40,14 +66,15 @@ export const MovieCard: React.FC<MovieCardProps> = ({
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
-            icon="playlist_add"
+            icon={isOnWatchlist ? 'playlist_add_check' : 'playlist_add'}
             bgColor={theme.info}
             fontColor={theme.light}
           />
           <Button
-            icon="favorite_border"
+            icon={isFavorite ? 'favorite' : 'favorite_border'}
             bgColor={theme.danger}
             fontColor={theme.light}
+            onClick={() => handleFavoriteClick(isFavorite, id)}
           />
         </MovieCardActions>
       </MovieCardBody>
