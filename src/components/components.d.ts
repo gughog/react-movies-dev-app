@@ -19,6 +19,8 @@ interface MovieCardProps {
   release_date: string;
   vote_average?: number;
   overview: string;
+  isFavorite?: boolean;
+  isOnWatchlist?: boolean;
 }
 
 interface ButtonProps {
@@ -63,7 +65,7 @@ interface NoDataProps {
 }
 
 interface SearchInputProps {
-  searchHandler: (query: string) => Promise<void>;
+  searchHandler: (query: string) => Promise<void> | void;
   placeholder?: string;
 }
 
@@ -74,4 +76,9 @@ interface GridFrameProps {
 interface SweetAlertProps {
   title: string;
   text: string;
+}
+
+interface SweetAlertToastProps {
+  title: string;
+  type?: 'success' | 'error' | 'warning' | 'info' | 'question'
 }
