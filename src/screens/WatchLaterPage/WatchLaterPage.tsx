@@ -66,7 +66,7 @@ export const WatchLaterPage: React.FC = () => {
               </GridFrame>
             </>
           )
-          : <NoData title="You movies saved will appear here!" icon={cinema} />
+          : <NoData title="You saved movies will appear here!" icon={cinema} />
       }
     </>
   );

@@ -23,6 +23,8 @@ interface SearchMoviesProps {
 }
 
 interface MovieDetails extends MovieProps {
+  isOnWatchList?: boolean;
+  isFavorite?: boolean;
   imdb_id: string;
   tagline: string;
   videos: {
