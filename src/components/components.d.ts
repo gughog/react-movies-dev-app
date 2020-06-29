@@ -21,6 +21,7 @@ interface MovieCardProps {
   overview: string;
   isFavorite?: boolean;
   isOnWatchlist?: boolean;
+  fetchFavorites?: () => void;
 }
 
 interface ButtonProps {

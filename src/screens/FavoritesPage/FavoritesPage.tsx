@@ -20,6 +20,13 @@ export const FavoritesPage: React.FC = () => {
     }
   }, []);
 
+  const fetchFavorites = () => {
+    const data = getFavorites();
+    if (data) {
+      setFavoriteMovies(data);
+    }
+  };
+
   return (
     <>
       <FavoritesPageTitle>
@@ -52,6 +59,7 @@ export const FavoritesPage: React.FC = () => {
                       overview={overview}
                       isFavorite={isFavorite}
                       isOnWatchlist={isOnWatchlist}
+                      fetchFavorites={fetchFavorites}
                     />
                   ))
                 }

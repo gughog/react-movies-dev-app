@@ -22,12 +22,16 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   title,
   isFavorite = false,
   isOnWatchlist,
+  fetchFavorites,
 }) => {
   const history = useHistory();
 
   const handleFavoriteClick = (favorited: boolean, movieId: number) => {
     if (favorited) {
       removeFromFavorites(movieId);
+      if (fetchFavorites) {
+        fetchFavorites();
+      }
       return true;
     }
     setFavorite({
@@ -37,6 +41,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({
       release_date,
       title,
     });
+    if (fetchFavorites) {
+      fetchFavorites();
+    }
     return true;
   };
 
