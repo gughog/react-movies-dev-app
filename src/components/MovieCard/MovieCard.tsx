@@ -15,22 +15,22 @@ import {
 
 export const MovieCard: React.FC<MovieCardProps> = ({
   id,
-  description,
-  image,
-  releaseDate,
+  overview,
+  backdrop_path,
+  release_date,
   title,
 }) => {
   const history = useHistory();
   return (
     <MovieCardContainer key={id}>
-      <MovieCardImage src={image ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${image}` : noPicture} />
+      <MovieCardImage src={backdrop_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}` : noPicture} />
       <MovieCardBody>
         <MovieCardTitle to={`/movie/${id}`}>
           {title}
         </MovieCardTitle>
-        <MovieCardReleaseDate>{releaseDate.slice(0, 4)}</MovieCardReleaseDate>
+        <MovieCardReleaseDate>{release_date.slice(0, 4)}</MovieCardReleaseDate>
         <MovieCardDescription>
-          {description}
+          {overview}
         </MovieCardDescription>
         <MovieCardActions>
           <Button

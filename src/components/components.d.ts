@@ -13,12 +13,12 @@ interface MainMovieContainerProps {
 
 interface MovieCardProps {
   id: number;
-  image: string;
-  backdropImage?: string;
+  poster_path?: string;
+  backdrop_path: string;
   title: string;
-  releaseDate: string;
-  votes?: number;
-  description: string;
+  release_date: string;
+  vote_average?: number;
+  overview: string;
 }
 
 interface ButtonProps {
