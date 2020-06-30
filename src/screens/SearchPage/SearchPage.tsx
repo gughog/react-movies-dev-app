@@ -6,7 +6,6 @@ import { MovieCard, SearchInput, NoData } from 'components';
 import { ErrorAlert } from 'components/SweetAlert';
 import { SearchPageTitle, SearchPageResultsText } from './styles';
 
-
 export const SearchPage: React.FC = () => {
   const [searchMovies, setSearchMovies] = React.useState<SearchMoviesProps>();
 
@@ -59,7 +58,7 @@ export const SearchPage: React.FC = () => {
                 {
                   searchMovies && searchMovies.results.map(({
                     id,
-                    backdrop_path,
+                    poster_path,
                     title,
                     release_date,
                     overview,
@@ -67,7 +66,7 @@ export const SearchPage: React.FC = () => {
                     <MovieCard
                       key={id}
                       id={id}
-                      backdrop_path={backdrop_path}
+                      poster_path={poster_path}
                       title={title}
                       release_date={release_date}
                       overview={overview}

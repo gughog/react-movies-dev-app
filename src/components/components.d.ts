@@ -14,7 +14,7 @@ interface MainMovieContainerProps {
 interface MovieCardProps {
   id: number;
   poster_path?: string;
-  backdrop_path: string;
+  backdrop_path?: string;
   title: string;
   release_date: string;
   vote_average?: number;
@@ -38,6 +38,7 @@ interface ButtonStyles {
   bgColor?: string;
   fontColor?: string;
   isResponsive?: boolean;
+  onlyIcon?: boolean;
 }
 
 interface LinkButtonProps {
@@ -78,6 +79,8 @@ interface GridFrameProps {
 interface SweetAlertProps {
   title: string;
   text: string;
+  onButtonText?: string;
+  onOkAction?: (() => void) | undefined;
 }
 
 interface SweetAlertToastProps {

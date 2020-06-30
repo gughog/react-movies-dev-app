@@ -1,7 +1,13 @@
 import * as React from 'react';
 import Api from 'services/Api.service';
-import { useParams } from 'react-router-dom';
+import {
+  handleFavoriteClick,
+  handleWatchListClick,
+  markFavoritesAndOnWatchListAndReturn,
+} from 'helpers/click.handlers';
+import { useParams, useHistory } from 'react-router-dom';
 import { Button } from 'components';
+import { ErrorAlertAndRedirect } from 'components/SweetAlert';
 import { GridWithTitleTitle } from 'components/GridWithTitle/styles';
 import { GridFrame, LinkButton } from 'components/global-styles';
 import { theme } from 'themes';
@@ -20,8 +26,11 @@ import { MovieVideo } from './styles';
 
 export const MovieDetailsPage: React.FC = () => {
   const { id } = useParams();
+  const history = useHistory();
   const [loading, setLoading] = React.useState(false);
   const [movieDetails, setMovieDetails] = React.useState<MovieDetails>({
+    isFavorite: false,
+    isOnWatchList: false,
     popularity: 0,
     vote_count: 0,
     video: false,
@@ -48,14 +57,27 @@ export const MovieDetailsPage: React.FC = () => {
   React.useEffect(() => {
     setLoading(true);
     Api.get(`movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`)
+      .then((response) => response.data)
+      .then((response) => markFavoritesAndOnWatchListAndReturn([response]))
       .then((response) => {
-        setMovieDetails(response.data);
+        setMovieDetails(response[0]);
+        setOnFavorites(response[0].isFavorite);
+        setOnWatchList(response[0].isOnWatchList);
         setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
+        ErrorAlertAndRedirect({
+          title: 'Some error has occured!',
+          text: error.response.data.status_message,
+          onButtonText: 'Go to Home Page',
+          onOkAction: () => history.push('/'),
+        });
       });
-  }, [id]);
+  }, [id, history]);
+
+  const [onFavorites, setOnFavorites] = React.useState(movieDetails.isFavorite);
+  const [onWatchList, setOnWatchList] = React.useState(movieDetails.isOnWatchList);
 
   return (
     <>
@@ -97,24 +119,30 @@ export const MovieDetailsPage: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={`https://www.imdb.com/title/${movieDetails.imdb_id}/`}
-                      bgColor={theme.emphasys}
                       fontColor="black"
+                      bgColor={theme.light}
                     >
                       IMDB Page
                     </LinkButton>
                     <Button
-                      text="Add to Watch List"
+                      text={onWatchList ? 'Remove from Watch List' : 'Add to Watch List'}
+                      icon={onWatchList ? 'playlist_add_check' : 'playlist_add'}
                       bgColor={theme.info}
-                      fontColor="white"
-                      icon="playlist_add"
-                      responsive
+                      fontColor={theme.light}
+                      onClick={() => {
+                        handleWatchListClick(movieDetails);
+                        setOnWatchList(!onWatchList);
+                      }}
                     />
                     <Button
-                      text="Add to Favorites"
-                      bgColor={theme.danger}
-                      fontColor="white"
-                      icon="favorite_border"
-                      responsive
+                      text={onFavorites ? 'Remove from Favorites' : 'Add to Favorites'}
+                      icon={onFavorites ? 'star' : 'star_border'}
+                      bgColor={theme.emphasys}
+                      fontColor={theme.darkDeepest}
+                      onClick={() => {
+                        handleFavoriteClick(movieDetails);
+                        setOnFavorites(!onFavorites);
+                      }}
                     />
                   </MainMovieActionsContainer>
                 </MainMovieMeta>

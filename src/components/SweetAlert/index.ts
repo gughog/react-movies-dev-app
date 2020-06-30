@@ -22,6 +22,21 @@ export const ErrorAlert = ({ title, text }: SweetAlertProps) => {
   });
 };
 
+export const ErrorAlertAndRedirect = ({
+  title,
+  text,
+  onButtonText,
+  onOkAction,
+}: SweetAlertProps) => {
+  Swal.fire({
+    icon: 'error',
+    title,
+    text,
+    confirmButtonColor: theme.darkShallow,
+    confirmButtonText: onButtonText,
+  }).then(onOkAction);
+};
+
 export const SuccessToast = ({ title, type = 'success' }: SweetAlertToastProps) => {
   Toast.fire({
     icon: type,

@@ -11,9 +11,9 @@ export const SearchContainer = styled.form`
 
 export const SearchInputText = styled.input`
   display: block;
-  height: 3rem;
+  height: 2.5rem;
   width: 50vw;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   box-sizing: border-box;
 
   color: ${({ theme }) => theme.darkShallow};

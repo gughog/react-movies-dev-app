@@ -9,7 +9,6 @@ import {
   SearchPageResultsText as WatchLaterPageResultsText,
 } from 'screens/SearchPage/styles';
 
-
 export const WatchLaterPage: React.FC = () => {
   const [watchListMovies, setWatchListMovies] = React.useState<MovieCardProps[]>();
 
@@ -43,7 +42,7 @@ export const WatchLaterPage: React.FC = () => {
                 {
                   watchListMovies && watchListMovies.map(({
                     id,
-                    backdrop_path,
+                    poster_path,
                     title,
                     release_date,
                     overview,
@@ -53,7 +52,7 @@ export const WatchLaterPage: React.FC = () => {
                     <MovieCard
                       key={id}
                       id={id}
-                      backdrop_path={backdrop_path}
+                      poster_path={poster_path}
                       title={title}
                       release_date={release_date}
                       overview={overview}

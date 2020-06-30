@@ -43,7 +43,7 @@ export const FavoritesPage: React.FC = () => {
                 {
                   favoriteMovies && favoriteMovies.map(({
                     id,
-                    backdrop_path,
+                    poster_path,
                     title,
                     release_date,
                     overview,
@@ -53,7 +53,7 @@ export const FavoritesPage: React.FC = () => {
                     <MovieCard
                       key={id}
                       id={id}
-                      backdrop_path={backdrop_path}
+                      poster_path={poster_path}
                       title={title}
                       release_date={release_date}
                       overview={overview}
