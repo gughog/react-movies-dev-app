@@ -43,6 +43,7 @@ export const ButtonBaseLayout = css<ButtonStyles>`
     margin-right: 0;
     margin-top: 1rem;
     padding: 0.5rem;
+    height: 2.5rem;
   }
 `;
 
