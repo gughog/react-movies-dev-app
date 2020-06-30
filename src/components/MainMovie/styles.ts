@@ -17,7 +17,7 @@ export const MainMovieContainer = styled.section<MainMovieContainerProps>`
 `;
 
 export const MainMoviePoster = styled.img`
-  width: 300px;
+  min-width: 300px;
   height: 450px;
   border-radius: 0.5rem;
   margin: 0.5rem solid red;
@@ -41,6 +41,7 @@ export const MainMovieMeta = styled.div`
 
   @media only screen and (max-width: 800px) {
     margin: 0;
+    border-radius: 0;
   }
 `;
 

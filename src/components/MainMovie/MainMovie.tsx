@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { handleFavoriteClick, handleWatchListClick } from 'helpers/click.handlers';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'components';
 import { theme } from 'themes';
-import { setFavorite, setToWatchList } from 'services/Storage.service';
 import {
   MainMovieContainer,
   MainMoviePoster,
@@ -15,16 +15,22 @@ import {
   MainMovieActionsContainer,
 } from './styles';
 
-export const MainMovie: React.FC<MovieCardProps> = ({
-  id,
-  overview,
-  poster_path,
-  backdrop_path,
-  release_date,
-  vote_average,
-  title,
-}) => {
+export const MainMovie: React.FC<MovieCardProps> = (props) => {
+  const {
+    id,
+    overview,
+    backdrop_path,
+    release_date,
+    vote_average,
+    poster_path,
+    title,
+    isFavorite = false,
+    isOnWatchList = false,
+  } = props;
+
   const history = useHistory();
+  const [onFavorites, setOnFavorites] = React.useState(isFavorite);
+  const [onWatchList, setOnWatchList] = React.useState(isOnWatchList);
 
   return (
     <MainMovieContainer key={id} backgroundImage={`${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}`}>
@@ -56,34 +62,26 @@ export const MainMovie: React.FC<MovieCardProps> = ({
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
-            text="Add to Watch List"
+            text={onWatchList ? 'Remove from Watch List' : 'Add to Watch List'}
             bgColor={theme.info}
             fontColor="white"
-            icon="playlist_add"
+            icon={onWatchList ? 'playlist_add_check' : 'playlist_add'}
             responsive
-            onClick={() => setToWatchList({
-              id,
-              poster_path,
-              backdrop_path,
-              title,
-              release_date,
-              overview,
-            })}
+            onClick={() => {
+              handleWatchListClick(props);
+              setOnWatchList(!onWatchList);
+            }}
           />
           <Button
-            text="Add to Favorites"
-            bgColor={theme.danger}
-            fontColor="white"
-            icon="favorite_border"
+            text={onFavorites ? 'Remove from Favorites' : 'Add to Favorites'}
+            icon={onFavorites ? 'star' : 'star_border'}
+            bgColor={theme.emphasys}
+            fontColor={theme.darkDeepest}
             responsive
-            onClick={() => setFavorite({
-              id,
-              poster_path,
-              backdrop_path,
-              title,
-              release_date,
-              overview,
-            })}
+            onClick={() => {
+              handleFavoriteClick(props);
+              setOnFavorites(!onFavorites);
+            }}
           />
         </MainMovieActionsContainer>
       </MainMovieMeta>
