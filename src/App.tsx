@@ -9,6 +9,7 @@ import {
   MovieDetailsPage,
   FavoritesPage,
   WatchLaterPage,
+  NotFound,
 } from 'screens';
 
 import {
@@ -23,21 +24,12 @@ const App = () => (
     <Router>
       <Navbar title="MOVIES DEV" />
       <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route path="/search">
-          <SearchPage />
-        </Route>
-        <Route path="/favorites">
-          <FavoritesPage />
-        </Route>
-        <Route path="/watchlist">
-          <WatchLaterPage />
-        </Route>
-        <Route path="/movie/:id">
-          <MovieDetailsPage />
-        </Route>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/search" component={SearchPage} />
+        <Route path="/favorites" component={FavoritesPage} />
+        <Route path="/watchlist" component={WatchLaterPage} />
+        <Route path="/movie/:id" component={MovieDetailsPage} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </Router>
