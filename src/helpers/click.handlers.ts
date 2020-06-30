@@ -43,9 +43,9 @@ export const handleWatchListClick = (movie: MovieCardProps) => {
  * @param movies - Array of movie objects.
  */
 export const markFavoritesAndOnWatchListAndReturn = (movies: MovieDetails[]) => {
-  const moviesCopy = [...movies];
-  const favoriteMoviesCopy = [...getFavorites()];
-  const watchListMoviesCopy = [...getWatchList()];
+  const moviesCopy = movies || [];
+  const favoriteMoviesCopy = getFavorites() || [];
+  const watchListMoviesCopy = getWatchList() || [];
 
   for (let i = 0; i < moviesCopy.length; i += 1) {
     for (let j = 0; j < favoriteMoviesCopy.length; j += 1) {
