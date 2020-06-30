@@ -1,11 +1,6 @@
 import * as React from 'react';
-import {
-  setFavorite,
-  removeFromFavorites,
-  setToWatchList,
-  removeFromWatchList,
-} from 'services/Storage.service';
-import { useHistory } from 'react-router-dom';
+import { handleFavoriteClick, handleWatchListClick } from 'helpers/click.handlers';
+import { Link, useHistory } from 'react-router-dom';
 import noPicture from 'assets/no_picture.png';
 import { theme } from 'themes';
 import { Button } from 'components';
@@ -19,64 +14,27 @@ import {
   MovieCardActions,
 } from './styles';
 
-export const MovieCard: React.FC<MovieCardProps> = ({
-  id,
-  overview,
-  backdrop_path,
-  release_date,
-  title,
-  isFavorite = false,
-  isOnWatchList = false,
-  fetchFavorites,
-  fetchWatchList,
-}) => {
+export const MovieCard: React.FC<MovieCardProps> = (props) => {
+  const {
+    id,
+    overview,
+    poster_path,
+    release_date,
+    title,
+    isFavorite = false,
+    isOnWatchList = false,
+  } = props;
+
   const history = useHistory();
 
-  const handleFavoriteClick = (favorited: boolean, movieId: number) => {
-    if (favorited) {
-      removeFromFavorites(movieId);
-      if (fetchFavorites) {
-        fetchFavorites();
-      }
-      return true;
-    }
-    setFavorite({
-      id,
-      overview,
-      backdrop_path,
-      release_date,
-      title,
-    });
-    if (fetchFavorites) {
-      fetchFavorites();
-    }
-    return true;
-  };
-
-  const handleWatchListClick = (inWatchList: boolean, movieId: number) => {
-    if (inWatchList) {
-      removeFromWatchList(movieId);
-      if (fetchWatchList) {
-        fetchWatchList();
-      }
-      return true;
-    }
-    setToWatchList({
-      id,
-      overview,
-      backdrop_path,
-      release_date,
-      title,
-    });
-    if (fetchWatchList) {
-      fetchWatchList();
-    }
-    return true;
-  };
+  const [onFavorites, setOnFavorites] = React.useState(isFavorite);
+  const [onWatchList, setOnWatchList] = React.useState(isOnWatchList);
 
   return (
     <MovieCardContainer key={id}>
-      <MovieCardImage src={backdrop_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}` : noPicture} />
+      <Link to={`/movie/${id}`}>
+        <MovieCardImage src={poster_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${poster_path}` : noPicture} />
+      </Link>
       <MovieCardBody>
         <MovieCardTitle to={`/movie/${id}`}>
           {title}
@@ -95,16 +53,22 @@ export const MovieCard: React.FC<MovieCardProps> = ({
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
-            icon={isOnWatchList ? 'playlist_add_check' : 'playlist_add'}
+            icon={onWatchList ? 'playlist_add_check' : 'playlist_add'}
             bgColor={theme.info}
             fontColor={theme.light}
-            onClick={() => handleWatchListClick(isOnWatchList, id)}
+            onClick={() => {
+              handleWatchListClick(props);
+              setOnWatchList(!onWatchList);
+            }}
           />
           <Button
-            icon={isFavorite ? 'favorite' : 'favorite_border'}
-            bgColor={theme.danger}
-            fontColor={theme.light}
-            onClick={() => handleFavoriteClick(isFavorite, id)}
+            icon={onFavorites ? 'star' : 'star_border'}
+            bgColor={theme.emphasys}
+            fontColor={theme.darkDeepest}
+            onClick={() => {
+              handleFavoriteClick(props);
+              setOnFavorites(!onFavorites);
+            }}
           />
         </MovieCardActions>
       </MovieCardBody>

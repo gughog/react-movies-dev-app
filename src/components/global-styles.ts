@@ -56,22 +56,22 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     border-collapse: collapse;
     border-spacing: 0;
   }
-  * {
-    box-sizing: border-box;
-  }
 `;
 
 export const GridFrame = styled.section<GridFrameProps>`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1.5rem;
-  ${({ center }) => center && 'justify-items: center;'}
+  
+  @media only screen and (max-width: 625px) {
+    justify-items: center;
+  }
 `;
 
 export const LinkButton = styled.a<LinkButtonProps>`
   ${ButtonBaseLayout}
   text-decoration: none;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 1rem;
   background-color: ${({ bgColor }) => bgColor};
-  color: ${({ fontColor }) => fontColor};;
+  color: ${({ fontColor }) => fontColor};
 `;
