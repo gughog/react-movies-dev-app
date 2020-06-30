@@ -74,4 +74,8 @@ export const LinkButton = styled.a<LinkButtonProps>`
   padding: 0.7rem 1rem;
   background-color: ${({ bgColor }) => bgColor};
   color: ${({ fontColor }) => fontColor};
+
+  @media only screen and (max-width: 800px) {
+    padding: 0;
+  }
 `;
