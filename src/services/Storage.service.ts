@@ -3,6 +3,11 @@ import { SuccessToast } from 'components/SweetAlert';
 const FAVORITES_STORAGE = 'userFavorites';
 const WATCHLIST_STORAGE = 'userWatchList';
 
+/**
+ * Handles the process of saving a movie in favorite's local storage. If the
+ * movie is already added, calls the removeFromFavorites's method instead.
+ * @param movie - Movie object.
+ */
 export const setFavorite = (movie: MovieCardProps) => {
   const previousData = localStorage.getItem(FAVORITES_STORAGE);
 
@@ -13,7 +18,7 @@ export const setFavorite = (movie: MovieCardProps) => {
     ));
 
     if (isDuplicated) {
-      SuccessToast({ title: 'This movie is already on you favorites!', type: 'info' });
+      removeFromFavorites(movie.id);
       return false;
     }
 
@@ -29,6 +34,11 @@ export const setFavorite = (movie: MovieCardProps) => {
   return true;
 };
 
+/**
+ * Handles the process of removing a movie in favorite's local storage by
+ * It's ID.
+ * @param id - Movie's ID.
+ */
 export const removeFromFavorites = (id: number) => {
   const storedData = localStorage.getItem(FAVORITES_STORAGE);
 
@@ -41,6 +51,10 @@ export const removeFromFavorites = (id: number) => {
   }
 };
 
+/**
+ * Get all favorites from local storage and returns the array parsed to
+ * JSON.
+ */
 export const getFavorites = () => {
   const storedData = localStorage.getItem(FAVORITES_STORAGE);
 
@@ -52,7 +66,11 @@ export const getFavorites = () => {
 };
 
 // =============================================================
-
+/**
+ * Handles the process of saving a movie in watch list's local storage. If the
+ * movie is already added, calls the removeFromWatchList's method instead.
+ * @param movie - Movie object.
+ */
 export const setToWatchList = (movie: MovieCardProps) => {
   const previousData = localStorage.getItem(WATCHLIST_STORAGE);
 
@@ -63,7 +81,7 @@ export const setToWatchList = (movie: MovieCardProps) => {
     ));
 
     if (isDuplicated) {
-      SuccessToast({ title: 'This movie is already on you watch list!', type: 'info' });
+      removeFromWatchList(movie.id);
       return false;
     }
 
@@ -79,6 +97,11 @@ export const setToWatchList = (movie: MovieCardProps) => {
   return true;
 };
 
+/**
+ * Handles the process of removing a movie in watch list's local storage by
+ * It's ID.
+ * @param id - Movie's ID.
+ */
 export const removeFromWatchList = (id: number) => {
   const storedData = localStorage.getItem(WATCHLIST_STORAGE);
 
@@ -91,6 +114,10 @@ export const removeFromWatchList = (id: number) => {
   }
 };
 
+/**
+ * Get all list of watch later movies from local storage and returns the
+ * array parsed to JSON.
+ */
 export const getWatchList = () => {
   const storedData = localStorage.getItem(WATCHLIST_STORAGE);
 

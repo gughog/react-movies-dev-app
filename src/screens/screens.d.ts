@@ -13,6 +13,8 @@ interface MovieProps {
   vote_average: number;
   overview: string;
   release_date: string;
+  isFavorite?: boolean;
+  isOnWatchList?: boolean;
 }
 
 interface SearchMoviesProps {
@@ -23,6 +25,8 @@ interface SearchMoviesProps {
 }
 
 interface MovieDetails extends MovieProps {
+  isOnWatchList?: boolean;
+  isFavorite?: boolean;
   imdb_id: string;
   tagline: string;
   videos: {

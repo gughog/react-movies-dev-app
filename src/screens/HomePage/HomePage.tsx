@@ -1,39 +1,13 @@
 import * as React from 'react';
-import { MainMovie, GridWithTitle, MovieCard } from 'components';
+import { MainMovie, MovieCard } from 'components';
 import { GridWithTitleTitle } from 'components/GridWithTitle/styles';
 import { GridFrame } from 'components/global-styles';
+import { ErrorAlert } from 'components/SweetAlert';
 
 import Api from 'services/Api.service';
+import { markFavoritesAndOnWatchListAndReturn } from 'helpers/click.handlers';
 
 export const HomePage = () => {
-  const categories = [
-    {
-      title: 'Upcomings',
-      bgColor: 'linear-gradient(to right, #16222a, #3a6073)',
-      fontColor: '',
-    },
-    {
-      title: 'Top Rateds',
-      bgColor: 'linear-gradient(to right, #3e5151, #decba4)',
-      fontColor: '',
-    },
-    {
-      title: 'Popular',
-      bgColor: 'linear-gradient(to right, #a8c0ff, #3f2b96)',
-      fontColor: '',
-    },
-    {
-      title: 'Now Playing',
-      bgColor: 'linear-gradient(to right, #403b4a, #e7e9bb)',
-      fontColor: '',
-    },
-    {
-      title: 'Latests',
-      bgColor: 'linear-gradient(to right, #000000, #434343)',
-      fontColor: '',
-    },
-  ];
-
   const [loading, setLoading] = React.useState(false);
   const [movies, setMovies] = React.useState<MovieProps[]>();
   const [mainMovie, setmainMovie] = React.useState<MovieProps>({
@@ -51,22 +25,28 @@ export const HomePage = () => {
     vote_average: 0,
     overview: '',
     release_date: '',
+    isFavorite: false,
+    isOnWatchList: false,
   });
 
   React.useEffect(() => {
     setLoading(true);
     Api.get(`movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
       .then((response) => response.data.results)
+      .then((result) => markFavoritesAndOnWatchListAndReturn(result))
       .then((result) => {
         setMovies(result);
         setmainMovie(result[0]);
       })
       .then(() => setLoading(false))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        ErrorAlert({ title: 'Some error has occured', text: error });
+        setLoading(false);
+      });
   }, []);
 
   return (
-    <div>
+    <>
       {
         loading
           ? 'loading...'
@@ -79,6 +59,8 @@ export const HomePage = () => {
               overview={mainMovie.overview}
               release_date={mainMovie.release_date}
               vote_average={mainMovie.vote_average}
+              isFavorite={mainMovie.isFavorite}
+              isOnWatchList={mainMovie.isOnWatchList}
             />
           )
       }
@@ -86,20 +68,27 @@ export const HomePage = () => {
       <GridFrame center>
         {
           movies && movies.map(({
-            id, backdrop_path, title, release_date, overview,
+            id,
+            poster_path,
+            title,
+            release_date,
+            overview,
+            isFavorite,
+            isOnWatchList,
           }) => (
             <MovieCard
               key={id}
               id={id}
-              backdrop_path={backdrop_path}
+              poster_path={poster_path}
               title={title}
               release_date={release_date}
               overview={overview}
+              isFavorite={isFavorite}
+              isOnWatchList={isOnWatchList}
             />
           ))
         }
       </GridFrame>
-      <GridWithTitle title="Browser by Categories" data={categories} />
-    </div>
+    </>
   );
 };

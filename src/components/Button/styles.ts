@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const ButtonBaseLayout = css<ButtonStyles>`
   margin-right: 1rem;
   border: none;
-  padding: 0;
+  padding: 0.5rem;
   background-color: aquamarine;
   display: flex;
   justify-content: center;
@@ -14,7 +14,16 @@ export const ButtonBaseLayout = css<ButtonStyles>`
   background-color: ${({ bgColor, theme }) => bgColor || theme.light};
   color: ${({ fontColor, theme }) => fontColor || theme.darkDeepest};
 
-  * { padding: 0.5rem; }
+  ${({ onlyIcon }) => {
+    if (!onlyIcon) {
+      return `
+        i { margin: 0.5rem 0.25rem 0.5rem 0.75rem; }
+        span { margin: 0.5rem 0.75rem 0.5rem 0.25rem; }
+      `;
+    }
+
+    return '* { padding: 0.5rem; }';
+  }}
 
   &:hover { transform: scale(1.05); }
   &:active {
@@ -33,11 +42,11 @@ export const ButtonBaseLayout = css<ButtonStyles>`
     text-align: center;
     margin-right: 0;
     margin-top: 1rem;
-
-    margin: 1rem 0.5rem 0 0.5rem 
+    padding: 0.5rem;
   }
 `;
 
 export const ButtonBody = styled.button<ButtonStyles>`
   ${ButtonBaseLayout}
+  padding: 0;
 `;

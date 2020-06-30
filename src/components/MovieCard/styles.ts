@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MovieCardContainer = styled.div`
-  width: 300px;
+  max-width: 300px;
   transition: display 0.3s, transform 0.3s;
 
   &:hover {
@@ -16,14 +16,16 @@ export const MovieCardContainer = styled.div`
 
 export const MovieCardBody = styled.div`
   background-color: ${({ theme }) => theme.darkShallow};
+  opacity: 0.90;
   padding: 1rem;
   position: absolute;
+  bottom: 0;
   display: none;
-  width: 300px;
+  max-width: 300px;
 `;
 
 export const MovieCardImage = styled.img`
-  width: 300px;
+  max-width: 300px;
 `;
 
 export const MovieCardTitle = styled(Link)`
@@ -34,15 +36,20 @@ export const MovieCardTitle = styled(Link)`
 
 export const MovieCardReleaseDate = styled.p`
   font-size: 1.1rem;
-  margin: 1rem 0 0.5rem 0;
+  margin: 0.5rem 0;
 `;
 
 export const MovieCardDescription = styled.p`
   line-height: 1.4;
+  text-align: justify;
 `;
 
 export const MovieCardActions = styled.section`
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+
+  button {
+    margin: 0.5rem;
+  }
 `;

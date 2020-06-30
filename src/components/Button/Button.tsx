@@ -15,6 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
     fontColor={fontColor}
     isResponsive={responsive}
     onClick={onClick}
+    onlyIcon={!text}
   >
     {
       icon && <i className="material-icons">{icon}</i>
