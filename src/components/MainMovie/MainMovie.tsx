@@ -33,11 +33,18 @@ export const MainMovie: React.FC<MovieCardProps> = (props) => {
   const [onWatchList, setOnWatchList] = React.useState(isOnWatchList);
 
   return (
-    <MainMovieContainer key={id} backgroundImage={`${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}`}>
-      <MainMoviePoster src={`${process.env.REACT_APP_IMAGE_BASE_URL}w300${poster_path}`} />
+    <MainMovieContainer
+      key={id}
+      data-testid="mainMovieBackdropImage"
+      backgroundImage={`${process.env.REACT_APP_IMAGE_BASE_URL}original${backdrop_path}`}
+    >
+      <MainMoviePoster
+        data-testid="mainMoviePoster"
+        src={`${process.env.REACT_APP_IMAGE_BASE_URL}w300${poster_path}`}
+      />
       <MainMovieMeta>
         <MainMovieTopic> Popular </MainMovieTopic>
-        <MainMovieTitle>
+        <MainMovieTitle data-testid="mainMovieTitle">
           {title}
         </MainMovieTitle>
         <MainMovieVoteAverage>
@@ -54,6 +61,7 @@ export const MainMovie: React.FC<MovieCardProps> = (props) => {
         </MainMovieDescription>
         <MainMovieActionsContainer>
           <Button
+            id="mainMovieGoToDetails"
             text="See Details"
             bgColor={theme.darkShallow}
             fontColor="white"
@@ -62,6 +70,7 @@ export const MainMovie: React.FC<MovieCardProps> = (props) => {
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
+            id="mainMovieToggleWatchList"
             text={onWatchList ? 'Remove from Watch List' : 'Add to Watch List'}
             bgColor={theme.info}
             fontColor="white"
@@ -73,6 +82,7 @@ export const MainMovie: React.FC<MovieCardProps> = (props) => {
             }}
           />
           <Button
+            id="mainMovieToggleFavorite"
             text={onFavorites ? 'Remove from Favorites' : 'Add to Favorites'}
             icon={onFavorites ? 'star' : 'star_border'}
             bgColor={theme.emphasys}

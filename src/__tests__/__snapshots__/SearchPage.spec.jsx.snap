@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Page tests Should match the snapshot for "SearchPage" screen 1`] = `
+<DocumentFragment>
+  <h2
+    class="sc-fznWOq lgTVAX"
+  >
+    Search for Movies
+  </h2>
+  <form
+    class="sc-fzoNJl lipmDu"
+  >
+    <input
+      class="sc-fzoXWK mIgCT"
+      placeholder="E.g.: Star Wars"
+      value=""
+    />
+    <button
+      class="sc-fzqNJr ikbhRF"
+      data-testid="searchInputButtonSubmit"
+      type="button"
+    >
+      <i
+        class="material-icons"
+      >
+        search
+      </i>
+      <span>
+        Search
+      </span>
+    </button>
+  </form>
+  <section
+    class="sc-fzpmMD dpBVZd"
+  >
+    <p
+      class="sc-fznMAR jQVwQt"
+    >
+      Start to search a movie by title!
+    </p>
+    <img
+      alt="Start to search a movie by title!"
+      class="sc-fznxKY gwoGIM"
+      src="cinema.svg"
+    />
+  </section>
+</DocumentFragment>
+`;

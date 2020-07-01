@@ -46,6 +46,8 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/camelcase': 'off',
     'react/prop-types': 0,
+    'react/jsx-filename-extension': 'off',
+    "react/jsx-props-no-spreading": "off",
   },
   settings: {
     'import/parsers': {

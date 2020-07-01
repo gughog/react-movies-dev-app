@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App tests Should match the snapshot for "App" component 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw iAA-dCc"
+  >
+    <nav
+      class="sc-AxhCb jvvfzj"
+    >
+      <a
+        aria-current="page"
+        class="sc-AxjAm eNfybe active"
+        href="/"
+      >
+        <div
+          class="sc-AxgMl cjEjyT"
+        >
+          <img
+            alt="Movie icon"
+            class="sc-Axmtr koDVaQ"
+            src="movie_icon.svg"
+          />
+          <h1
+            class="sc-AxheI kouLZm"
+          >
+            MOVIES DEV
+          </h1>
+        </div>
+      </a>
+      <ul
+        class="sc-AxhUy cevNGS"
+      >
+        <li
+          class="sc-AxmLO oZQsq"
+        >
+          <a
+            class="sc-AxjAm sc-AxirZ bWMUTY"
+            href="/search"
+          >
+            Search
+          </a>
+        </li>
+        <li
+          class="sc-AxmLO oZQsq"
+        >
+          <a
+            class="sc-AxjAm sc-AxirZ bWMUTY"
+            href="/watchlist"
+          >
+            Watch Later
+          </a>
+        </li>
+        <li
+          class="sc-AxmLO oZQsq"
+        >
+          <a
+            class="sc-AxjAm sc-AxirZ bWMUTY"
+            href="/favorites"
+          >
+            Favorites
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  loading...
+  <h2
+    class="sc-fzoXzr kCmOKr"
+  >
+     More on Popular 
+  </h2>
+  <section
+    class="sc-fzoyAV gMhNNv"
+  />
+  <footer
+    class="sc-fzoyTs gwQxQK"
+  >
+    <hr />
+    ©2020, All rights reserved.
+  </footer>
+</DocumentFragment>
+`;

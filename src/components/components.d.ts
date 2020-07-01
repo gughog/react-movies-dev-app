@@ -26,6 +26,7 @@ interface MovieCardProps {
 }
 
 interface ButtonProps {
+  id?: string;
   text?: string;
   bgColor?: string;
   fontColor?: string;
@@ -44,11 +45,6 @@ interface ButtonStyles {
 interface LinkButtonProps {
   bgColor?: string;
   fontColor?: string;
-}
-
-interface GridWithTitleProps {
-  title: string;
-  data: CategoryCardprops[];
 }
 
 interface CategoryCardprops {

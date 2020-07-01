@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Watch Later page tests Should match the snapshot for "WatchPage" screen 1`] = `
+<DocumentFragment>
+  <h2
+    class="sc-fznWOq lgTVAX"
+  >
+    My Watch List
+  </h2>
+  <section
+    class="sc-fzpmMD dpBVZd"
+  >
+    <p
+      class="sc-fznMAR jQVwQt"
+    >
+      You saved movies will appear here!
+    </p>
+    <img
+      alt="You saved movies will appear here!"
+      class="sc-fznxKY gwoGIM"
+      src="cinema.svg"
+    />
+  </section>
+</DocumentFragment>
+`;

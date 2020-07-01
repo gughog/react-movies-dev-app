@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component tests Should match the snapshot for "Button" without icon component 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-fzqNJr bdUMTf"
+    data-testid="buttonComponent"
+    type="button"
+  >
+    <i
+      class="material-icons"
+    >
+      star_border
+    </i>
+  </button>
+</DocumentFragment>
+`;

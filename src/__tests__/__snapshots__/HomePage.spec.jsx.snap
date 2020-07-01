@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page tests Should match the snapshot for "HomePage" screen 1`] = `
+<DocumentFragment>
+  loading...
+  <h2
+    class="sc-fzoXzr kCmOKr"
+  >
+     More on Popular 
+  </h2>
+  <section
+    class="sc-fzoyAV gMhNNv"
+  />
+</DocumentFragment>
+`;
