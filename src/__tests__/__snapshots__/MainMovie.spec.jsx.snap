@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Movie Card component tests Should match the snapshot for "MainMovie" component 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-fzozJi cwzTaU"
+    data-testid="mainMovieBackdropImage"
+  >
+    <img
+      class="sc-fzoLsD xaAnd"
+      data-testid="mainMoviePoster"
+      src="undefinedw300/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+    />
+    <div
+      class="sc-fzpans gYBYWK"
+    >
+      <h2
+        class="sc-fzplWN eoNhtE"
+      >
+         Popular 
+      </h2>
+      <h1
+        class="sc-fznyAO dPgeiU"
+        data-testid="mainMovieTitle"
+      >
+        Suicide Squad
+      </h1>
+      <span
+        class="sc-fznKkj epEmyG"
+      >
+        5.91/10
+      </span>
+      <span
+        class="sc-fznZeY dilAKp"
+      >
+        Release: 2016
+      </span>
+      <p
+        class="sc-fzokOt gixGmF"
+      >
+        From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.
+      </p>
+      <div
+        class="sc-fzqBZW kmKAIV"
+      >
+        <button
+          class="sc-fzqNJr hjTRiR"
+          data-testid="mainMovieGoToDetails"
+          type="button"
+        >
+          <i
+            class="material-icons"
+          >
+            launch
+          </i>
+          <span>
+            See Details
+          </span>
+        </button>
+        <button
+          class="sc-fzqNJr dwrDHc"
+          data-testid="mainMovieToggleWatchList"
+          type="button"
+        >
+          <i
+            class="material-icons"
+          >
+            playlist_add
+          </i>
+          <span>
+            Add to Watch List
+          </span>
+        </button>
+        <button
+          class="sc-fzqNJr brRykB"
+          type="button"
+        >
+          <i
+            class="material-icons"
+          >
+            star_border
+          </i>
+          <span>
+            Add to Favorites
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

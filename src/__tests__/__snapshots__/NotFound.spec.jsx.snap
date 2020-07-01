@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not Found Page tests Should match the snapshot for "NotFound" screen 1`] = `
+<DocumentFragment>
+  <h2
+    class="sc-fzqBkg frbgpf"
+  >
+    This is not what you looking for!
+  </h2>
+  <section
+    class="sc-fznMAR kJIjAt"
+  >
+    <p
+      class="sc-fzolEj bQKqPZ"
+    >
+      Go back to home and try again!
+    </p>
+    <img
+      alt="Go back to home and try again!"
+      class="sc-fznWOq kwxMvj"
+      src="cinema.svg"
+    />
+  </section>
+</DocumentFragment>
+`;
