@@ -47,11 +47,6 @@ interface LinkButtonProps {
   fontColor?: string;
 }
 
-interface GridWithTitleProps {
-  title: string;
-  data: CategoryCardprops[];
-}
-
 interface CategoryCardprops {
   title: string;
   bgColor: string;
