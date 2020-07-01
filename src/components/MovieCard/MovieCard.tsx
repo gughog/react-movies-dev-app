@@ -32,11 +32,20 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
 
   return (
     <MovieCardContainer key={id}>
-      <Link to={`/movie/${id}`}>
-        <MovieCardImage src={poster_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${poster_path}` : noPicture} />
+      <Link
+        data-testid="movieCardClicableImage"
+        to={`/movie/${id}`}
+      >
+        <MovieCardImage
+          data-testid="movieCardPoster"
+          src={poster_path ? `${process.env.REACT_APP_IMAGE_BASE_URL}original${poster_path}` : noPicture}
+        />
       </Link>
       <MovieCardBody>
-        <MovieCardTitle to={`/movie/${id}`}>
+        <MovieCardTitle
+          data-testid="movieCardClicableTitle"
+          to={`/movie/${id}`}
+        >
           {title}
         </MovieCardTitle>
         <MovieCardReleaseDate>{release_date.slice(0, 4)}</MovieCardReleaseDate>
@@ -47,12 +56,14 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
         </MovieCardDescription>
         <MovieCardActions>
           <Button
+            id="movieCardGoToDetailsButton"
             icon="launch"
             bgColor={theme.darkDeep}
             fontColor={theme.light}
             onClick={() => history.push(`/movie/${id}`)}
           />
           <Button
+            id="movieCardToggleAddToList"
             icon={onWatchList ? 'playlist_add_check' : 'playlist_add'}
             bgColor={theme.info}
             fontColor={theme.light}
@@ -62,6 +73,7 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
             }}
           />
           <Button
+            id="movieCardToggleAddToFavorites"
             icon={onFavorites ? 'star' : 'star_border'}
             bgColor={theme.emphasys}
             fontColor={theme.darkDeepest}

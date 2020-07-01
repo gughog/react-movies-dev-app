@@ -13,11 +13,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({ searchHandler, placeho
       }}
     >
       <SearchInputText
+        test-dataid="searchInputField"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder={placeholder}
       />
       <Button
+        id="searchInputButtonSubmit"
         icon="search"
         text="Search"
         onClick={() => searchHandler(search)}

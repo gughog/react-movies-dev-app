@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ButtonBody } from './styles';
 
 export const Button: React.FC<ButtonProps> = ({
+  id,
   text,
   bgColor,
   fontColor,
@@ -10,6 +11,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => (
   <ButtonBody
+    data-testid={id}
     type="button"
     bgColor={bgColor}
     fontColor={fontColor}
