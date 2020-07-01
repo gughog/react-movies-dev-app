@@ -26,6 +26,7 @@ interface MovieCardProps {
 }
 
 interface ButtonProps {
+  id?: string;
   text?: string;
   bgColor?: string;
   fontColor?: string;
