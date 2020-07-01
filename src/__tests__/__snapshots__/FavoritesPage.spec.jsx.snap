@@ -3,21 +3,21 @@
 exports[`Favorites Page tests Should match the snapshot for "FavoritesPage" screen 1`] = `
 <DocumentFragment>
   <h2
-    class="sc-fzqBkg frbgpf"
+    class="sc-fznWOq lgTVAX"
   >
     My Favorite Movies
   </h2>
   <section
-    class="sc-fznMAR kJIjAt"
+    class="sc-fzpmMD dpBVZd"
   >
     <p
-      class="sc-fzolEj bQKqPZ"
+      class="sc-fznMAR jQVwQt"
     >
       You favorite movies will appear here!
     </p>
     <img
       alt="You favorite movies will appear here!"
-      class="sc-fznWOq kwxMvj"
+      class="sc-fznxKY gwoGIM"
       src="cinema.svg"
     />
   </section>

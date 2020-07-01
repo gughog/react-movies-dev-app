@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { render, cleanup, waitForElement } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import { MovieDetailsPage } from 'screens';
 
 afterEach(cleanup);

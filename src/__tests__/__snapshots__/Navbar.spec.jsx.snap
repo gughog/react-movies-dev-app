@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App tests Should match the snapshot for "App" component 1`] = `
+exports[`Navbar component tests Should match the snapshot for "Navbar" component 1`] = `
 <DocumentFragment>
   <div
     class="sc-AxiKw iAA-dCc"
   >
     <nav
-      class="sc-AxhCb jvvfzj"
+      class="sc-AxhCb dmhiER"
     >
       <a
         aria-current="page"
-        class="sc-AxjAm eNfybe active"
+        class="sc-AxjAm eLkdkJ active"
         href="/"
       >
         <div
@@ -32,30 +32,30 @@ exports[`App tests Should match the snapshot for "App" component 1`] = `
         class="sc-AxhUy cevNGS"
       >
         <li
-          class="sc-AxmLO oZQsq"
+          class="sc-AxmLO dBYfyx"
         >
           <a
-            class="sc-AxjAm sc-AxirZ bWMUTY"
+            class="sc-AxjAm sc-AxirZ hLHWDL"
             href="/search"
           >
             Search
           </a>
         </li>
         <li
-          class="sc-AxmLO oZQsq"
+          class="sc-AxmLO dBYfyx"
         >
           <a
-            class="sc-AxjAm sc-AxirZ bWMUTY"
+            class="sc-AxjAm sc-AxirZ hLHWDL"
             href="/watchlist"
           >
             Watch Later
           </a>
         </li>
         <li
-          class="sc-AxmLO oZQsq"
+          class="sc-AxmLO dBYfyx"
         >
           <a
-            class="sc-AxjAm sc-AxirZ bWMUTY"
+            class="sc-AxjAm sc-AxirZ hLHWDL"
             href="/favorites"
           >
             Favorites
@@ -64,20 +64,5 @@ exports[`App tests Should match the snapshot for "App" component 1`] = `
       </ul>
     </nav>
   </div>
-  loading...
-  <h2
-    class="sc-fzoXzr kCmOKr"
-  >
-     More on Popular 
-  </h2>
-  <section
-    class="sc-fzoyAV gMhNNv"
-  />
-  <footer
-    class="sc-fzoyTs gwQxQK"
-  >
-    <hr />
-    ©2020, All rights reserved.
-  </footer>
 </DocumentFragment>
 `;

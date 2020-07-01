@@ -73,6 +73,7 @@ exports[`Main Movie Card component tests Should match the snapshot for "MainMovi
         </button>
         <button
           class="sc-fzqNJr brRykB"
+          data-testid="mainMovieToggleFavorite"
           type="button"
         >
           <i
