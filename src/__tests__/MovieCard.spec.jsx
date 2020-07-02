@@ -34,7 +34,7 @@ describe('Movie Card component tests', () => {
       </MemoryRouter>,
     );
 
-    expect(getByTestId('movieCardPoster')).toHaveAttribute('src', 'undefinedoriginal/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg');
+    expect(getByTestId('movieCardPoster')).toHaveAttribute('src', 'http://image.tmdb.org/t/p/original/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg');
     expect(getByText(/From DC Comics comes the Suicide Squad, an antihero team of incarcerated/i)).toBeInTheDocument();
     expect(getByText('2016')).toBeInTheDocument();
     expect(getByTestId('movieCardClicableTitle')).toHaveTextContent('Suicide Squad');

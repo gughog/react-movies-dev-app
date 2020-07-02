@@ -8,16 +8,16 @@ exports[`Favorites Page tests Should match the snapshot for "FavoritesPage" scre
     My Favorite Movies
   </h2>
   <section
-    class="sc-fzpmMD dpBVZd"
+    class="sc-fzoyTs eKtpNU"
   >
     <p
-      class="sc-fznMAR jQVwQt"
+      class="sc-fzoXWK ouTrC"
     >
       You favorite movies will appear here!
     </p>
     <img
       alt="You favorite movies will appear here!"
-      class="sc-fznxKY gwoGIM"
+      class="sc-fzoNJl imBuEv"
       src="cinema.svg"
     />
   </section>

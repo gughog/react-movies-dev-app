@@ -3,13 +3,13 @@
 exports[`Main Movie Card component tests Should match the snapshot for "MainMovie" component 1`] = `
 <DocumentFragment>
   <section
-    class="sc-fzozJi cwzTaU"
+    class="sc-fzozJi ggWlfB"
     data-testid="mainMovieBackdropImage"
   >
     <img
       class="sc-fzoLsD xaAnd"
       data-testid="mainMoviePoster"
-      src="undefinedw300/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+      src="http://image.tmdb.org/t/p/w300/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
     />
     <div
       class="sc-fzpans gYBYWK"

@@ -3,40 +3,40 @@
 exports[`Movie Card component tests Should match the snapshot for "MovieCard" component 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzpjYC iCmXBs"
+    class="sc-fzoyAV dzHyzl"
   >
     <a
       data-testid="movieCardClicableImage"
       href="/movie/297761"
     >
       <img
-        class="sc-fznJRM kzgVss"
+        class="sc-fzoXzr kIBjtI"
         data-testid="movieCardPoster"
-        src="undefinedoriginal/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+        src="http://image.tmdb.org/t/p/original/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
       />
     </a>
     <div
-      class="sc-fznxsB cBLacw"
+      class="sc-fzoLag cDFtaS"
     >
       <a
-        class="sc-fznWqX ccSiWP"
+        class="sc-fzpjYC cdGrzv"
         data-testid="movieCardClicableTitle"
         href="/movie/297761"
       >
         Suicide Squad
       </a>
       <p
-        class="sc-fzoiQi dDLToi"
+        class="sc-fznxsB hdxuBT"
       >
         2016
       </p>
       <p
-        class="sc-fzqARJ hdNEPE"
+        class="sc-fznJRM czMeNv"
       >
         From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the...
       </p>
       <section
-        class="sc-fzqNqU eSyPdJ"
+        class="sc-fznWqX jEfNhi"
       >
         <button
           class="sc-fzqNJr craSqe"

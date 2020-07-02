@@ -41,8 +41,8 @@ describe('Main Movie Card component tests', () => {
       <MainMovie {...mockMovieProps()} />,
     );
 
-    expect(getByTestId('mainMovieBackdropImage')).toHaveStyle('background:', 'undefinedw300/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg');
-    expect(getByTestId('mainMoviePoster')).toHaveAttribute('src', 'undefinedw300/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg');
+    expect(getByTestId('mainMovieBackdropImage')).toHaveStyle('background:', 'http://image.tmdb.org/t/p/w300/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg');
+    expect(getByTestId('mainMoviePoster')).toHaveAttribute('src', 'http://image.tmdb.org/t/p/w300/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg');
     expect(getByText(/From DC Comics comes the Suicide Squad, an antihero team of incarcerated/i)).toBeInTheDocument();
     expect(getByText('Release: 2016')).toBeInTheDocument();
     expect(getByTestId('mainMovieTitle')).toHaveTextContent('Suicide Squad');

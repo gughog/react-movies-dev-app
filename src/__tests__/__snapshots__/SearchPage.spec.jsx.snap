@@ -8,10 +8,10 @@ exports[`Search Page tests Should match the snapshot for "SearchPage" screen 1`]
     Search for Movies
   </h2>
   <form
-    class="sc-fzoNJl lipmDu"
+    class="sc-fzqARJ fDFTqN"
   >
     <input
-      class="sc-fzoXWK mIgCT"
+      class="sc-fzqNqU kcFlH"
       placeholder="E.g.: Star Wars"
       value=""
     />
@@ -31,16 +31,16 @@ exports[`Search Page tests Should match the snapshot for "SearchPage" screen 1`]
     </button>
   </form>
   <section
-    class="sc-fzpmMD dpBVZd"
+    class="sc-fzoyTs eKtpNU"
   >
     <p
-      class="sc-fznMAR jQVwQt"
+      class="sc-fzoXWK ouTrC"
     >
       Start to search a movie by title!
     </p>
     <img
       alt="Start to search a movie by title!"
-      class="sc-fznxKY gwoGIM"
+      class="sc-fzoNJl imBuEv"
       src="cinema.svg"
     />
   </section>
