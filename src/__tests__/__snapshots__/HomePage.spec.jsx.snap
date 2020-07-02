@@ -4,12 +4,12 @@ exports[`Home Page tests Should match the snapshot for "HomePage" screen 1`] = `
 <DocumentFragment>
   loading...
   <h2
-    class="sc-fzoXzr kCmOKr"
+    class="sc-fzpmMD eIrOPw"
   >
      More on Popular 
   </h2>
   <section
-    class="sc-fzoyAV gMhNNv"
+    class="sc-fznxKY hUwCoC"
   />
 </DocumentFragment>
 `;

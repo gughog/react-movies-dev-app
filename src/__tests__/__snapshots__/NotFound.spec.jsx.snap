@@ -8,16 +8,16 @@ exports[`Not Found Page tests Should match the snapshot for "NotFound" screen 1`
     This is not what you looking for!
   </h2>
   <section
-    class="sc-fzpmMD dpBVZd"
+    class="sc-fzoyTs eKtpNU"
   >
     <p
-      class="sc-fznMAR jQVwQt"
+      class="sc-fzoXWK ouTrC"
     >
       Go back to home and try again!
     </p>
     <img
       alt="Go back to home and try again!"
-      class="sc-fznxKY gwoGIM"
+      class="sc-fzoNJl imBuEv"
       src="cinema.svg"
     />
   </section>

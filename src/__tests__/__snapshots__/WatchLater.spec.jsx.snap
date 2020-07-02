@@ -8,16 +8,16 @@ exports[`Watch Later page tests Should match the snapshot for "WatchPage" screen
     My Watch List
   </h2>
   <section
-    class="sc-fzpmMD dpBVZd"
+    class="sc-fzoyTs eKtpNU"
   >
     <p
-      class="sc-fznMAR jQVwQt"
+      class="sc-fzoXWK ouTrC"
     >
       You saved movies will appear here!
     </p>
     <img
       alt="You saved movies will appear here!"
-      class="sc-fznxKY gwoGIM"
+      class="sc-fzoNJl imBuEv"
       src="cinema.svg"
     />
   </section>

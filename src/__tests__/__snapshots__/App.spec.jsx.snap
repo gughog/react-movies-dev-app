@@ -66,15 +66,15 @@ exports[`App tests Should match the snapshot for "App" component 1`] = `
   </div>
   loading...
   <h2
-    class="sc-fzoXzr kCmOKr"
+    class="sc-fznMAR chhEGU"
   >
      More on Popular 
   </h2>
   <section
-    class="sc-fzoyAV gMhNNv"
+    class="sc-fzpmMD VNSzq"
   />
   <footer
-    class="sc-fzoyTs gwQxQK"
+    class="sc-fzoiQi iecYUB"
   >
     <hr />
     ©2020, All rights reserved.
